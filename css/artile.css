@@ -1,0 +1,343 @@
+* {
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.woff') format('woff');
+        font-display: swap;
+        font-weight: 400;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Medium.woff') format('woff');
+        font-display: swap;
+        font-weight: 500;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-SemiBold.woff') format('woff');
+        font-display: swap;
+        font-weight: 600;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Bold.woff') format('woff');
+        font-display: swap;
+        font-weight: 700;
+        font-style: normal;
+}
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.list-reset {  /*Разобраться зачем это*/
+    margin: 0;
+    padding: 0;
+    list-style-type: none; 
+}
+
+.btn-reset {  /*Разобраться зачем это*/
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+:root {
+    --main-color: #FFC107;
+    --secondary-color: #FF4081;
+    --secondary-text: #757575;
+    --devider-color: #bdbdbd;
+    --text-color: #212121;
+
+}
+
+/* ekfnjkadfjhsadhjghsfjadnfjnfjwernfjnfanwrfbnwrjrbfjwbfKIEFJWEFWEJFE34WFJR */
+.container {
+    display: flex;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.right-part {
+    width: 70%;
+    padding: 10px;
+
+}
+
+.left-part {
+    width: 30%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-part-image {
+    max-width: 55%;
+    margin: 0 auto;
+    margin-top: 100px;
+    transition: 0.6s ease;
+}
+
+
+
+.small-image {
+    max-width: 85%;
+}
+
+.text-container, .overhead, .title, .author, .paragraph-container, .paragraph, .annotation, .annotation-container {
+    transition: 0.6s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 80px;
+    
+}
+
+
+.logo-b {
+    display: inline-block;
+    font-size: 26px;
+    color: #fff;
+    background-color: var(--secondary-text);
+    padding: 10px 17px;
+    border-radius: 25%;
+    transition: 0.3s ease;
+}
+
+.logo-b:hover {
+    background-color: #000;
+}
+
+
+.logo-text {
+    margin-left: 15px;
+    color: var(--secondary-text);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.header-list {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header-item {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.header-link {
+    position: relative;
+    text-decoration: none;
+    color: var(--secondary-text);
+}
+
+.header-link-active {
+    padding-bottom: 5px;
+}
+
+
+.header-link-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor; /*Берёт текущий цвет у элемента*/   
+}
+
+/* MAiN */
+
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 180px;
+}
+
+.overhead {
+    display: inline-block;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.title {
+    position: relative;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.title-medium {
+    font-size: 60px;
+}
+
+.title-big {
+    font-size: 54px;
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: 0;
+    top: 90px;
+    width: 50%;
+    height: 2px;
+    background-color: var(--secondary-text);
+    opacity: 0.7;   
+}
+
+.author {
+    text-align: center;
+    padding-top: 65px;
+}
+
+.paragraph {
+    color: var(--secondary-text);
+    line-height: 25px;
+}
+
+.paragraph-container {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.first-paragraph {
+    margin-top: 30px;
+    line-height: 30px;
+}
+
+.first-paragraph::first-letter {
+    float: left;     
+    font-family: 'Times New Roman', Times, serif; 
+    font-size: 58px;
+    color: #000;
+    margin: 15px 0px 0 0px;
+    padding: 0 5px 0 0;
+}
+
+.image-paragraph {
+    display: inline-block;
+    padding: 15px;
+    color: #7c7c7c;
+    line-height: 22px;
+}
+
+.last-paragraph {
+    margin-bottom: 50px;
+}
+
+.first-termin {
+    position: relative;
+}
+
+.first-termin::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 70px;
+    width: 40%;
+    height: 2px;
+    background-color: var(--secondary-text);
+    opacity: 0.7;   
+}
+
+
+.annotation {
+    font-size: 14px;
+    color: gray;
+    line-height: 18px;
+}
+
+.annotation-link {
+    color: gray;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Предложения */
+.first-sentence {
+    font-weight: 700;
+}
+
+.italic-word {
+    font-style: italic;
+}
+
+.bolt-word {
+    font-weight: 700;
+}
+
+
+.word { /*Я даун, а это ссылка*/
+    color: #0089ff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,137,255,.3);
+    transition: color .3s ease, border-color .3s ease;
+}
+
+.word:hover {
+    color: red;
+    border-bottom: 1px solid red;
+}
+
+.other-link {
+    color: slateblue;
+    border-bottom: 1px solid slateblue;
+}
+
+
+
