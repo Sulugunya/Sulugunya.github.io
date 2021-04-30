@@ -1,0 +1,441 @@
+* {
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.woff') format('woff');
+        font-display: swap;
+        font-weight: 400;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Medium.woff') format('woff');
+        font-display: swap;
+        font-weight: 500;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-SemiBold.woff') format('woff');
+        font-display: swap;
+        font-weight: 600;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Bold.woff') format('woff');
+        font-display: swap;
+        font-weight: 700;
+        font-style: normal;
+}
+
+:root { /*Локальная переменная, рабоотает везде*/
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+img {
+    max-width: 100%;
+}
+
+.list-reset {  /*стиль подключается вручную и используетсяя для списков*/
+    margin: 0;
+    padding: 0;
+    list-style-type: none; 
+}
+
+.btn-reset {  /*стиль подключается вручную и используетсяя для кнопок*/
+    padding: 0;
+    font-family: var(--font-family);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1140px; /*Добавили 30 пиксилей для адаптива в будущем*/
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.link {
+    display: inline-block; /*Без него не работает text-indent и line height*/
+    font-weight: 700;   
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: none;
+    color: #d4d6d4;
+    transition: color 0,3s ease-in-out;
+}
+
+.link svg {
+    height: 11px;
+    width: 11px;
+    fill: currentColor;
+    transform: translateY(1px);
+}
+
+.link span {
+    display: inline-block;
+    text-indent: 7px; /*Устанавливает велечину отступа у первой строки */
+    border-bottom: 1px solid currentColor; /*значение цвета как у родителя*/
+}
+
+.link:hover {
+    color: #ffd723;
+}
+
+.site-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 46px;
+    color: #4D533C;
+}
+
+.header { 
+    position: absolute; /*Сделано для того чтобы фон не съезжал*/
+    left: 0;
+    top: 0;
+    padding: 24px 0;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.burger {
+    --offset-horizontal: 11px;
+    --offset-vertical: 14px;
+    position: relative;
+    padding: var(--offset-vertical) var(--offset); /*Нам нужны одинаковые значеия и чтобы при их измене они менялись везде*/
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    background-color: #f5f6f7;
+    
+}
+
+.burger-line {
+    position: absolute;
+    left: var(--offset);
+    top: var(--offset-vertical);
+    background-color: #000;
+    display: inline-block;
+    width: calc(100% - (var(--offset-horizontal)) * 2);
+    height: 2px;
+    transform: translateX(-50%); /*Выравнивает по центру*/
+}
+
+.burger-line:nth-child(2) {
+    top: calc(var(--offset-vertical) + 6px);
+}
+
+.burger-line:nth-child(3) {
+    top: calc(var(--offset-vertical) + 12px);
+}
+
+.hero {
+    padding-top: 189px;
+    padding-bottom: 100px;
+    min-height: 811px;
+    background-image: url("../img/hero-bg.jpg");
+    background-position: center 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.hero-content {
+    max-width: 616px;
+    color: #fff; /*Если задать цвет текста у родительского элемента, то он унаследуется и у досчерних*/
+}
+
+.hero-subtitle {
+    display: inline-block;
+    margin-bottom: 21px;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.hero-title {
+    margin: 0;
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 74px;
+
+}
+
+.hero-descr {
+    margin: 0;
+    margin-bottom: 45px;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.hero-link {
+    color: #ffd723;
+}
+
+.hero-link:hover {
+    color: #D4D6D4;
+}
+
+/* Second Section */
+
+.services {
+    padding-top: 150px;
+}
+
+.services-title {
+    margin: 0;
+    margin-bottom: 60px;
+    max-width: 607px;
+}
+
+.services-list {
+    display: grid; /*css grid*/
+    gap: 30px; /*умные отступы между элементами*/
+    grid-template-columns: repeat(4, 1fr); /*fr - умная еденица длины, которая сдлает всё адаптивно*/
+    /* 4 - это скольько должно быть элементов */
+}
+
+.services-subtile {
+    margin: 0;
+    min-width: 183px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 34px;
+    text-transform: uppercase;
+    color: #4D533C;
+}
+
+.services-descr {
+    margin: 0;
+    font-weight: 400;
+    max-width: 194px;
+    margin-bottom: 56px;
+    font-size: 14px;
+    line-height: 26px;
+    color: rgba(33, 56, 66, 0.6);
+
+}
+
+.services-item {
+    display: flex;
+    align-items: flex-start; /*Штука чтобы ссылки занимали столько пространства сколько им выделене*/
+    flex-direction: column;
+}
+
+.services-link {
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+/* Third Section */
+
+.get-started {
+    position: relative;
+    top: 180px;
+    width: 88%;
+    padding: 70px 0;
+    background-color: #fafafa;
+    box-shadow: 50px 130px 100px rgba(0, 0, 0, 0.145947);
+}
+
+.get-started-title {
+    margin: 0;
+    max-width: 822px;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 74px;
+    margin-bottom: 50px;
+    color: #4D533C;
+}
+
+.get-started-link span{
+    text-transform: uppercase;
+}
+
+
+/* Footer */
+
+.footer {
+    padding-top: 300px;
+    color: #fff;
+    background-image: url(../img/Footer-bg.jpg);
+    background-position: center 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 52px;
+    border-bottom: 1px solid #5d6544;
+}
+
+.footer-contacts-item:not(:last-child) {
+    margin-right: 128px;
+}
+
+.footer-contacts-text {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 40px;
+    color: #B6C197;
+
+}
+
+.footer-contacts-value {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 40px;
+    color: #fff;
+    text-decoration: none;
+    font-style: normal;
+}
+
+.footer-middle {
+    --grid-gap: 70px;
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(4, 1fr);
+    padding: 60px 0;
+    border-bottom: 1px solid #5d6544;
+}
+
+.footer-title {
+    margin: 0;
+    margin-bottom: 21px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 38px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.footer-link {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 48px;
+    text-decoration: none;
+    color: #B6C197;
+}
+
+.footer-text {
+    margin: 0;
+    margin-bottom: 23px;
+    font-size: 16px;
+    line-height: 26px;
+    color: #B6C197;
+}
+
+.footer-mail {
+    display: inline-block;
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 38px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-column:last-child {
+    position: relative;
+
+}
+
+.footer-column:last-child::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(-1 * (var(--grid-gap)));
+    width: 1px;
+    height: 100%;
+    background-color: #5d6544;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+}
+
+.social-item:not(:last-child) {
+    margin-right: 11px;
+}
+
+.social-link {
+    display: block;
+    border-radius: 100%;
+    width: 33px;
+    height: 33px;
+    background-color: #ffd723;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 17px auto;
+    opacity: 0.4;
+    transition: opacity 0.3s ease-in;
+}
+
+.social-link:hover {
+    opacity: 1;
+}
+
+.social-link-fb {
+    background-image: url("..//img/facebook.svg");
+}
+
+.social-link-tw {
+    background-image: url("..//img/twitter.svg");
+}
+
+.social-link-g {
+    background-image: url("..//img/google-plus.svg");
+}
+
+.social-link-in {
+    background-image: url("..//img/linkedin.svg");
+}
+
+.copyright {
+    font-size:  14px;
+    line-height: 21px;
+    color: #B5C096;
+}
+
+.footer-bottom {
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-link {
+    opacity: 0.4;
+    transition: opacity 0.3s ease-in;
+}
+
+.footer-link:hover {
+    opacity: 1;
+}
