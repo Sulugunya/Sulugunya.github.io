@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/toDoList.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/toDoList.js"></script>
+    <title>Список дел</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-part">
+            <h1 class="left-part-title">Список дел:</h1>
+            <p class="empty-list">Список пуст...</p>
+            
+            <ul class="list list-reset">
+                
+            </ul>
+        </div>
+
+        <div class="right-part">
+            <h1 class="right-part-title">Добавить новое дело</h1>
+            
+            <form action="">
+                <div class="field">
+
+                    <label for="title">* <span>Название</span></label>
+                    <input class="title" type="text" id="title" name="title" maxlength="35">
+
+                    <label for="descr">* <span>Описание</span></label>
+                    <textarea class="description" id="description" cols="30" rows="10" maxlength="480"></textarea>
+
+                    <input type="button" class="add-task" value="Добавить дело">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
