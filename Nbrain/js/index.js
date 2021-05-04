@@ -16,7 +16,12 @@ $(function(){ //Смена цвета через полторы секунды
         $('.main-container, .pagination-list').fadeIn(300);
     }
 
-
+    const startedAnimations = () => {
+        $('.preloader-container').prepend('<img src="preloader.gif" alt="" class="preloader">');
+        setTimeout(startStyles, 2350);
+        setTimeout(elementsStartedAnimation, 2400);
+        setTimeout(startOverflow, 2650);
+    }
 
 
     
@@ -29,7 +34,5 @@ $(function(){ //Смена цвета через полторы секунды
         }
     });
 
-    setTimeout(startStyles, 2350);
-    setTimeout(elementsStartedAnimation, 2400);
-    setTimeout(startOverflow, 2650);
+    setTimeout(startedAnimations, 500)
 });
