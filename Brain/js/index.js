@@ -17,7 +17,7 @@ $(function(){ //Смена цвета через полторы секунды
     }
 
     const startedAnimations = () => {
-        $('.preloader-container').prepend('<img src="preloader.gif" alt="" class="preloader">');
+        $('.preloader-container').prepend('<img src="img/preloader.gif" alt="" class="preloader">');
         setTimeout(startStyles, 2350);
         setTimeout(elementsStartedAnimation, 2400);
         setTimeout(startOverflow, 2650);
