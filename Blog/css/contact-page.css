@@ -1,0 +1,372 @@
+@font-face {
+    font-family: 'Futura PT';
+    src: url('\fonts\FuturaPTBook.woff2') format('woff2'),
+        url('\fonts\FuturaPTBook.woff') format('woff');
+        font-display: swap;
+        font-weight: 400;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: url('\fonts\FuturaPTMedium.woff2') format('woff2'),
+        url('\fonts\FuturaPTMedium.woff') format('woff');
+        font-display: swap;
+        font-weight: 500;
+        font-style: normal;
+}
+
+:root {
+    --main-color: #5D71DD;
+    --secondary-color: #aca7a7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.list-reset {  /*Разобраться зачем это*/
+    margin: 0;
+    padding: 0;
+    list-style-type: none; 
+}
+
+.btn-reset {  /*Разобраться зачем это*/
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+body {
+    overflow-anchor: none; /*не понял что это*/
+    margin: 0;
+    font-family: "Futura PT", sans-serif;
+    font-weight: 500;
+   background-color: #f9f9f9;
+}
+
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important; 
+	width: 1px !important; 
+	overflow: hidden;
+}
+
+.container {
+    max-width: 1430px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+
+
+
+/* HEADER */
+
+
+.header {
+    background-color: #fff;
+    padding: 6px 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav:not(:last-child) {
+    padding-right: 40px;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 40px;
+    margin-top: 1px;
+}
+
+.nav-link {
+    position: relative;
+    font-size: 18px;
+    color: #2F2222;
+}
+
+.nav-link-active {
+    color: var(--main-color);;
+}
+
+.nav-link-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor; /*Берёт текущий цвет у элемента*/   
+}
+
+.phone {
+    font-size: 18px;   
+    font-weight: 500;
+    color: #5D71DD;
+    background-image: url("../img/phone.svg");
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+
+}
+
+.header-logo {
+    transform: translateY(5px);
+}
+
+li {
+    list-style-type: none;
+}
+
+
+/**************************** MAIN ********************************/
+.main {
+    margin-top: 100px;
+}
+
+.main-container {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-title {
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.tel, .location {
+    color: var(--main-color);
+}
+
+.tel-img, .location-img {
+    margin-right: 10px;
+    transform: translateY(2px);
+}
+
+.tel {
+    margin-bottom: 20px;
+}
+
+.location {
+    margin-bottom: 40px;
+}
+
+.sotial-networks {
+    display: flex;
+}
+
+
+.contact-inf {
+    display: inline-block;
+    max-width: 310px;
+}
+
+
+.sotial-networks img {
+    max-height: 22px;
+    max-width: 22px;
+}
+
+
+.sotial-networks li {
+    margin-right: 20px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    border-radius: 50px;
+}
+
+.facebook:hover {
+    background-color: rgb(58, 77, 163);
+    transition: 0.2s;
+}
+
+.facebook:hover img {
+    transform: scale(1.15);
+    transition: 0.2s;
+}
+
+.vk:hover {
+    background-color: rgb(58, 77, 163);
+    transition: 0.2s;
+}
+
+.vk:hover img {
+    transform: scale(1.15);
+    transition: 0.2s;
+}
+
+.instagram:hover {
+    background-color: rgb(58, 77, 163);
+    transition: 0.2s;
+}
+
+.instagram:hover img {
+    transform: scale(1.15);
+    transition: 0.2s;
+}
+
+.twitter:hover {
+    background-color: rgb(58, 77, 163);
+    transition: 0.2s;
+}
+
+.twitter:hover img {
+    transform: scale(1.15);
+    transition: 0.2s;
+}
+
+
+.sotial-networks a {
+    line-height: 0px;
+}
+
+.subscribe {
+    margin-top: 30px;
+    padding: 25px 30px 50px 30px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 4px 8px 40px rgba(8, 24, 111, 0.2);
+}
+
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.subscribe {
+    display: inline-block;
+   max-width: 560px;
+}
+
+.subscribe-form input, textarea {
+    max-width: 440px;
+    background: #F5F5F5;
+    border: 0px;
+    border-radius: 20px;
+    padding: 15px 30px;
+}
+
+.sub-form-input {
+    margin-top: 20px;
+}
+
+#message {
+    resize: none;
+    margin-top: 20px;
+}
+
+.sub-form-btn {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    width: 440px;
+    padding: 17px 30px;
+    background: #5D71DD;
+    border-radius: 20px;
+    border: 0px;
+}
+
+.sub-btn-img {
+    font-size: 24px;
+    position: relative;
+    left: 10px;
+    top: 2px;
+}
+
+/******************************* HOVER *****************************/
+.nav-link:hover {
+    color:var(--main-color);
+    transition: 0.1s;
+}
+
+.sub-form-btn:hover {
+    box-shadow: 4px 8px 40px rgba(8, 24, 111, 0.2);
+    color: var(--main-color);
+    background-color: #fff;
+    transition: 0.1s;
+}
+
+
+/********** FOOTER ***********/
+
+.footer {
+    background-color:rgba(93, 113, 221, 0.05);;
+    margin-top: 89px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-item {
+    padding: 0px;
+    margin-right: 32px;
+}
+
+.logo-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+ul {
+    padding-inline-start: 0px;
+}
+
+
+.footer-inf {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    font-size: 14px;
+    padding-bottom: 30px;
+}
+
+.nav-link-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor; /*Берёт текущий цвет у элемента*/
+}   
